@@ -1,16 +1,20 @@
 <template>
   <div class="header">
     <div class="left-container">
-      <img src="../assets/images/home-solid.svg" alt="facebook_logo">
-      <input type="text">
+      <img src="../assets/images/facebook-brands.svg" alt="facebook_logo">
+      <label>
+        <div :class="'search-img'"></div>
+        <input type="text" placeholder="Facebook 검색">
+      </label>
     </div>
     <div class="middle-container">
       <div
         class="img-box"
         v-for="(elem, index) in middleSrc"
         :key="index"
+        :style="{'background': 'url(' + `${elem.path}` + ') center/17.5% no-repeat'}"
+        @click="navigator"
       >
-        <img :src="elem.path" :alt="elem.alt">
       </div>
     </div>
     <div class="right-container">
@@ -35,6 +39,7 @@ export default {
 
   data() {
     return {
+      currentPage: null,
       middleSrc: [
         {
           path: require(`../assets/images/home-solid.svg`),
@@ -72,6 +77,17 @@ export default {
         }
       ]
     }
+  },
+
+  methods: {
+    navigator(e) {
+      this.currentPage != null ? this.currentPage.classList.remove('target') : ''
+
+      if(!e.target.classList.contains('target')) {
+        e.target.classList.add('target')
+        this.currentPage = e.target
+      }
+    }
   }
 }
 </script>
@@ -81,9 +97,9 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 10px;
+  padding: 0px 10px;
   background-color: #ffffff;
-  height: 50px;
+  height: 60px;
   box-shadow: 0px 5px 10px #efefef;
   z-index: 1;
 
@@ -91,6 +107,7 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 
     &:not(:nth-of-type(2)) {
       img {
@@ -103,6 +120,40 @@ export default {
       }
     }
   }
+  
+  .left-container {
+    label {
+      width: 240px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      position: relative;
+
+      .search-img {
+        position: absolute;
+        width: 16px;
+        height: 17px;
+        top: 12px;
+        left: 12px;
+        background: url('../assets/images/search-solid.svg') center no-repeat
+      }
+
+      input {
+        width: 208px;
+        height: 24px;
+        padding: 7px 16px 9px 16px;
+        background-color: #eff2f5;
+        border-radius: 50px;
+        border: none;
+        text-indent: 20px;
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
 
   .middle-container {
     .img-box {
@@ -110,11 +161,7 @@ export default {
       justify-content: center;
       align-items: center;
       width: 180px;
-
-      img {
-        width: 36px;
-        height: 36px;
-      }
+      height: 60px;
 
       &:nth-of-type(2) {
         position: relative;
@@ -125,16 +172,14 @@ export default {
           height: 10px;
           content: "";
           background: url('../assets/images/play-solid.svg') no-repeat;
-          top: 10px;
+          top: 22.5px;
           right: 84px;
         }
       }
-
-      &:nth-of-type(3) {
-        img {
-          border: 4px solid black;
-          border-radius: 100%;
-        }
+      
+      &.target {
+        color: #1b77f2;
+        box-shadow: inset 0 -2px 0 0 #1b77f2;
       }
     }
   }
