@@ -19,14 +19,14 @@
     </div>
     <div class="right-container">
       <div class="profile-box">
-        <img src="" alt="profile">
+        <img src="../assets/images/profile.jpeg" alt="profile">
         <span>구윤회</span>
       </div>
       <div
         class="img-box"
         v-for="(elem, index) in rightSrc"
         :key="index"
-        :style="{'background': '#e2e5e9 url(' + `${elem.path}` + ') center/50% no-repeat'}"
+        :style="{'background': '#e2e5e9 url(' + `${elem.path}` + ') center/40% no-repeat'}"
       >
       </div>
     </div>
@@ -97,7 +97,7 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0px 10px;
+  padding: 0px 16px;
   background-color: #ffffff;
   height: 60px;
   box-shadow: 0px 5px 10px #efefef;
@@ -111,7 +111,7 @@ export default {
 
     &:not(:nth-of-type(2)) {
       img {
-        width: 42px;
+        width: 40px;
         height: auto;
       }
 
@@ -129,6 +129,7 @@ export default {
       justify-content: center;
       align-content: center;
       position: relative;
+      cursor: pointer;
 
       .search-img {
         position: absolute;
@@ -147,6 +148,7 @@ export default {
         border-radius: 50px;
         border: none;
         text-indent: 20px;
+        cursor: pointer;
 
         &:focus {
           outline: none;
@@ -160,7 +162,7 @@ export default {
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 180px;
+      width: 125px;
       height: 60px;
 
       &:nth-of-type(2) {
@@ -171,25 +173,101 @@ export default {
           width: 10px;
           height: 10px;
           content: "";
-          background: url('../assets/images/play-solid.svg') no-repeat;
+          background: url('../assets/images/play-solid.svg') center/50% no-repeat;
           top: 22.5px;
-          right: 84px;
+          right: 57px;
         }
       }
       
       &.target {
         color: #1b77f2;
-        box-shadow: inset 0 -2px 0 0 #1b77f2;
+        box-shadow: inset 0 -3px 0 0 #1b77f2;
+      }
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.1) !important;
       }
     }
   }
 
   .right-container {
+    .profile-box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 4px 10px 4px 4px;
+      border-radius: 18px;
+      font-size: 15px;
+
+      img {
+        width: 28px;
+        height: auto;
+        border-radius: 100%;
+        margin-right: 6px;
+      }
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+    }
+
     .img-box {
       width: 40px;
       height: 40px;
       border: none;
       border-radius: 100%;
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.2) !important;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1110px) {
+  .header {
+    .left-container {
+      label {
+        width: 40px;
+
+        input {
+          width: 40px;
+          height: 40px;
+          padding: 0;
+
+          &::placeholder {
+            color: #eff2f5;
+          }
+        }
+      }
+    }
+
+    .middle-container {
+      .img-box {
+        width: 75px;
+        background-size: 35% !important;
+
+        &:nth-of-type(2) {
+          &:after {
+            width: 8.5px;
+            height: 8.5px;
+            content: "";
+            background: url('../assets/images/play-solid.svg') center/100% no-repeat;
+            top: 22.5px;
+            right: 33.5px;
+          }
+        }
+      }
+    }
+
+    .right-container {
+      .profile-box {
+        display: none;
+      }
+
+      .img-box {
+        background-size: 40% !important;
+      }
     }
   }
 }

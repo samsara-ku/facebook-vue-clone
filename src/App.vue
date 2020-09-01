@@ -22,6 +22,6 @@ body {
 }
 
 #app {
-  
+  width: 100%;
 }
 </style>
