@@ -1,15 +1,32 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-// import MainLayout from '@/layout/MainLayout.vue'
-import First from '@/layout/First.vue'
+import Home from '@/views/Home.vue'
+import Watch from '@/views/Watch.vue'
+import Group from '@/views/Group.vue'
+import Gaming from '@/views/Gaming.vue'
 
 Vue.use(VueRouter)
 
   const routes = [
   {
-    path: '/',
-    name: 'First',
-    component: First
+    path: '/home',
+    name: 'Home',
+    component: Home
+  },
+  {
+    path: '/watch',
+    name: 'Watch',
+    component: Watch
+  },
+  {
+    path: '/group',
+    name: 'Group',
+    component: Group
+  },
+  {
+    path: '/gaming',
+    name: 'Gaming',
+    component: Gaming
   }
 ]
 

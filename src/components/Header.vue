@@ -1,7 +1,9 @@
 <template>
   <div class="header">
     <div class="left-container">
-      <img src="../assets/images/facebook-brands.svg" alt="facebook_logo">
+      <router-link to='home'>
+        <img src="../assets/images/facebook-brands.svg" alt="facebook_logo">
+      </router-link>
       <label>
         <div :class="'search-img'"></div>
         <input type="text" placeholder="Facebook 검색">
@@ -11,6 +13,7 @@
       <div
         class="img-box"
         v-for="(elem, index) in middleSrc"
+        :id="elem.alt"
         :key="index"
         :style="{'background': 'url(' + `${elem.path}` + ') center/17.5% no-repeat'}"
         @click="navigator"
@@ -87,6 +90,7 @@ export default {
         e.target.classList.add('target')
         this.currentPage = e.target
       }
+      return this.$router.push(e.target.id)
     }
   }
 }

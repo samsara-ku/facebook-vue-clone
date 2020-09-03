@@ -1,5 +1,7 @@
 <template>
-<div></div>
+  <div>
+    Hi! This area is "Gaming.vue" area    
+  </div>
 </template>
 
 <script>
