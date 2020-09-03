@@ -2,8 +2,17 @@
   <div class="post-container">
     <div class="header">
       <div class="left-col">
-        <div>1</div>
-        <div>2</div>
+        <div class="col">
+          <img src="" alt="unkown">
+        </div>
+        <div class="col">
+          <div class="writer">
+            {{ this.writer }}
+          </div>
+          <div class="time">
+            {{ this.time }} • 
+          </div>
+        </div>
       </div>
       <div class="right-col">
         1
@@ -18,7 +27,34 @@
 
 <script>
 export default {
-  name: 'post'
+  name: 'post',
+
+  props: {
+    writer: {
+      type: String,
+      default: '기본값입니다'
+    },
+    
+    time: {
+      type: String,
+      default: '00:00:00'
+    },
+
+    totalsocialres: {
+      type: Number,
+      default: 0
+    },
+
+    reply: {
+      type: Number,
+      default: 1
+    },
+
+    share: {
+      type: Number,
+      default: 0
+    }
+  }
 }
 </script>
 
@@ -27,5 +63,11 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    .left-col {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
 </style>
