@@ -15,7 +15,7 @@
         v-for="(elem, index) in middleSrc"
         :id="elem.alt"
         :key="index"
-        :style="{'background': 'url(' + `${elem.path}` + ') center/17.5% no-repeat'}"
+        :style="{'background': 'url(' + `${elem.path}` + ') center/25% no-repeat'}"
         @click="navigator"
       >
       </div>

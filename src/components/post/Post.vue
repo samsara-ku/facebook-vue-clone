@@ -3,19 +3,19 @@
     <div class="header">
       <div class="left-col">
         <div class="col">
-          <img src="" alt="unkown">
+          <img class="profile" src="../../assets/images/user-solid.svg" alt="none">
         </div>
         <div class="col">
           <div class="writer">
-            {{ this.writer }}
+            <a href="">{{ this.writer }}</a>
           </div>
           <div class="time">
-            {{ this.time }} • 
+            {{ this.time }} • <img class="earth" src="../../assets/images/globe-americas-solid.svg" alt="hi">
           </div>
         </div>
       </div>
       <div class="right-col">
-        1
+        <img class="settings" src="../../assets/images/ellipsis-h-solid.svg" alt="none">
       </div>
     </div>
     <div class="content-box"></div>
@@ -59,15 +59,51 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  .post-container {
+    width: 680px;
 
-    .left-col {
+    .header {
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
+
+      .left-col {
+        display: flex;
+        justify-content: center;
+        align-items: center;      
+
+        .writer {
+          font-size: 15px;
+          font-weight: 600;
+          
+          a:link, a:visited, a:active, a:hover {
+            color: black;
+            text-decoration: none;
+          }
+        }
+
+        .time {
+          font-size: 13px;
+
+          .earth {
+            width: 12px;
+            height: 12px;
+          }
+        }
+
+        .profile {
+          width: 40px;
+          height: 40px;
+          border-radius: 100%;
+        }
+      }
+
+      .right-col {
+        .settings {
+          width: 20px;
+          height: 20px;
+        }
+      }
     }
   }
 </style>
