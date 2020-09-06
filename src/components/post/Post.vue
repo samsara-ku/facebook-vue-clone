@@ -9,7 +9,9 @@
         1
       </div>
     </div>
-    <div class="content-box"></div>
+    <div class="content-box">
+      {{ this.content }}
+    </div>
     <div class="img-box"></div>
     <div class="social-box"></div>
     <div class="function-box"></div>
@@ -18,7 +20,39 @@
 
 <script>
 export default {
-  name: 'post'
+  name: 'post',
+
+  props: {
+    writer: {
+      type: String,
+      default: '기본값입니다'
+    },
+    
+    time: {
+      type: String,
+      default: '00:00:00'
+    },
+
+    totalsocialres: {
+      type: Number,
+      default: 0
+    },
+
+    reply: {
+      type: Number,
+      default: 1
+    },
+
+    share: {
+      type: Number,
+      default: 0
+    },
+
+    content: {
+      type: String,
+      default: 'None'
+    }
+  }
 }
 </script>
 

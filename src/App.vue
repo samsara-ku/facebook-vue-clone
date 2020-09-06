@@ -1,18 +1,13 @@
 <template>
   <div id="app">
-    <MainLayout />
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import MainLayout from '@/layout/MainLayout.vue'
 
 export default {
   name: 'app',
-
-  components: {
-    MainLayout
-  }
 }
 </script>
 
