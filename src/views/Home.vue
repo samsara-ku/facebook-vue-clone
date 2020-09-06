@@ -4,7 +4,9 @@
       <Story />
     </div>
     <div class="row">
-      <Thought />
+      <Thought 
+        :name="'구윤회'"
+      />
     </div>
     <div class="row">
       <VideoTalk />
@@ -107,7 +109,7 @@ export default {
       }
 
       &:nth-of-type(3) {
-        margin: 10px 0;
+        margin: 15px 0;
       }
     }
   }
