@@ -9,7 +9,11 @@
 
 <script>
 export default {
+  name: 'Story',
 
+  props: {
+    Hi: String
+  }
 }
 </script>
 
@@ -19,7 +23,6 @@ export default {
     width: 103px;
     height: 190px;
     margin-right: 10px;
-    margin: 25px 0;
 
     .story-box {
       box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
