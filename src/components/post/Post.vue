@@ -67,8 +67,6 @@ export default {
 
 <style lang="scss" scoped>
   .post-container {
-    width: 680px;
-
     .header {
       display: flex;
       justify-content: space-between;

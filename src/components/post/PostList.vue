@@ -1,6 +1,5 @@
 <template>
   <div class="post-list-container">
-    123
     <Post 
       v-for="(e, i) in postInfoField"
       :key="i"
