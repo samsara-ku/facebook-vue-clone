@@ -19,6 +19,11 @@ import Post from './Post'
 
 export default {
   name: 'postlist',
+
+  props: {
+
+  },
+
   components: {
     Post
   },
