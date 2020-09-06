@@ -90,7 +90,7 @@ export default {
         e.target.classList.add('target')
         this.currentPage = e.target
       }
-      return this.$router.push(e.target.id)
+      return this.$router.push(e.target.id).catch(() => {})
     }
   }
 }

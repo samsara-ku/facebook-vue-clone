@@ -1,22 +1,34 @@
 <template>
-  <div>
+  <div class="mainlayout-container">
     <Header />
-    <router-view />
+    <div class="router-container">
+      <MainLeftSideBar />
+      <router-view />
+      <MainRightSideBar />
+    </div>
   </div>
 </template>
 
 <script>
 import Header from '@/components/Header.vue'
+import MainLeftSideBar from '@/components/MainLeftSideBar'
+import MainRightSideBar from '@/components/MainRightSideBar'
 
 export default {
   name: 'MainLayout',
 
   components: {
-    Header
+    Header,
+    MainLeftSideBar,
+    MainRightSideBar
   }
 }
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+  .router-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 </style>
