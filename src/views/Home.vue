@@ -1,9 +1,15 @@
 <template>
   <div class="home-container">
-    <div class="story-row">
+    <div class="row">
       <Story />
     </div>
-    <div class="post-row">
+    <div class="row">
+      <Thought />
+    </div>
+    <div class="row">
+      <VideoTalk />
+    </div>
+    <div class="row">
       <Post 
         v-for="(e, i) in postInfoField"
         :key="i"
@@ -21,6 +27,8 @@
 <script>
 import Post from '@/components/post/Post'
 import Story from '@/components/story/Story'
+import Thought from '@/components/thought/Thought'
+import VideoTalk from '@/components/videotalk/VideoTalk'
 
 export default {
   name: 'Home',
@@ -81,8 +89,10 @@ export default {
   },
 
   components: {
+    Post,
     Story,
-    Post
+    Thought,
+    VideoTalk
   }
 }
 </script>
@@ -91,8 +101,14 @@ export default {
   .home-container {
     width: 680px;
 
-    .story-row {
-      margin: 25px 0;
+    .row {
+      &:nth-of-type(1) {
+        margin: 25px 0;
+      }
+
+      &:nth-of-type(3) {
+        margin: 10px 0;
+      }
     }
   }
 </style>
