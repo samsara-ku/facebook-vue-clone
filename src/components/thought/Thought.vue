@@ -1,8 +1,12 @@
 <template>
   <div class="thought-container">
     <div class="row">
-      <div class="col"></div>
-      <div class="col">{{name}}님, 무슨 생각을 하고 계신가요?</div>
+      <div class="col">
+        <img src="../../assets/images/profile.jpeg" alt="">
+      </div>
+      <div class="col">
+        {{name}}님, 무슨 생각을 하고 계신가요?
+      </div>
     </div>
     <hr />
     <div class="row">
@@ -37,12 +41,15 @@ export default {
 
       &:nth-of-type(1) {
         margin-bottom: 12px;
-        .col:nth-of-type(1) {
-          width: 40px;
-          height: 40px;
-          border-radius: 50%;
-          background-color: blue;
+
+        .col:nth-of-type(1) {          
           margin-right: 8px;
+
+          img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+          }
         }
 
         .col:nth-of-type(2) {
@@ -72,7 +79,37 @@ export default {
         width: 200px;
         height: 24px;
         padding: 8px;
+        color: rgb(101, 103, 107);
+        font-weight: 600;
+        font-size: 15px;
         cursor: pointer;
+
+        &:nth-of-type(1) {
+          &:before {
+            fill: blue;
+            background: url('../../assets/images/video-solid.svg') center/100% no-repeat;
+          }
+        }
+
+        &:nth-of-type(2) {
+          &:before {
+            color: blue;
+            background: url('../../assets/images/images-solid.svg') center/100% no-repeat;
+          }
+        }
+
+        &:nth-of-type(3) {
+          &:before {
+            background: url('../../assets/images/smile-regular.svg') center/100% no-repeat;
+          }
+        }
+
+        &:before {
+          width: 25px;
+          height: 25px;
+          margin-right: 8px;
+          content: "";
+        }
 
         &:hover {
           background-color: rgba(0, 0, 0, 0.1) !important;
