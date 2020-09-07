@@ -10,7 +10,7 @@
             <a href="">{{ this.writer }}</a>
           </div>
           <div class="time">
-            {{ this.time }} • <img class="earth" src="../../assets/images/globe-americas-solid.svg" alt="hi">
+            {{ this.time }} · <img class="earth" src="../../assets/images/globe-americas-solid.svg" alt="hi">
           </div>
         </div>
       </div>

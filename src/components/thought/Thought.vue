@@ -42,7 +42,10 @@ export default {
       &:nth-of-type(1) {
         margin-bottom: 12px;
 
-        .col:nth-of-type(1) {          
+        .col:nth-of-type(1) {
+          display: flex;
+          justify-content: center;
+          align-items: center;
           margin-right: 8px;
 
           img {
