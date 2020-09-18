@@ -4,15 +4,13 @@
       <Story />
     </div>
     <div class="row">
-      <Thought 
-        :name="'구윤회'"
-      />
+      <Thought :name="'구윤회'"/>
     </div>
     <div class="row">
       <VideoTalk />
     </div>
     <div class="row">
-      <Post 
+      <Post
         v-for="(e, i) in postInfoField"
         :key="i"
         :writer="e.writer"
