@@ -1,11 +1,12 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '@/views/Home.vue'
-import Watch from '@/views/Watch.vue'
-import Group from '@/views/Group.vue'
-import Gaming from '@/views/Gaming.vue'
 
-import MainLayout from '@/layout/MainLayout.vue'
+const Home = () => import('@/views/Home.vue')
+const Watch = () => import('@/views/Watch.vue')
+const Group = () => import('@/views/Group.vue')
+const Gaming = () => import('@/views/Gaming.vue')
+
+const MainLayout = () => import('@/layout/MainLayout.vue')
 
 Vue.use(VueRouter)
 
