@@ -26,9 +26,9 @@
 
 <script>
 import Post from '@/components/post/Post'
-import Story from '@/components/story/Story'
-import Thought from '@/components/thought/Thought'
-import VideoTalk from '@/components/videotalk/VideoTalk'
+import Story from '@/components/post/story/Story'
+import Thought from '@/components/post/thought/Thought'
+import VideoTalk from '@/components/post/videotalk/VideoTalk'
 
 export default {
   name: 'Home',

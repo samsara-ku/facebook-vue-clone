@@ -1,36 +1,63 @@
 <template>
   <div class="mainlayout-container">
     <Header
-    :url="this.$route.path.substring(1)"
+      class="header"
+      :url="this.$route.path.substring(1)"
     />
     <div class="router-container">
-      <MainLeftSideBar />
+      <LeftSideBar 
+        class="fixed left"
+      />
       <router-view />
-      <MainRightSideBar />
+      <RightSideBar
+        v-if="this.$route.path.substring(1) == 'home'"
+        class="fixed right"
+      />
     </div>
   </div>
 </template>
 
 <script>
 import Header from '@/components/Header'
-import MainLeftSideBar from '@/components/MainLeftSideBar'
-import MainRightSideBar from '@/components/MainRightSideBar'
+import LeftSideBar from '@/components/LeftSideBar'
+import RightSideBar from '@/components/RightSideBar'
 
 export default {
   name: 'MainLayout',
 
   components: {
     Header,
-    MainLeftSideBar,
-    MainRightSideBar
+    LeftSideBar,
+    RightSideBar
   }
 }
 </script>
 
 <style lang="scss" scoped>
-  .router-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  .mainlayout-container {
+    .header {
+      width: 98.5%;
+      position: fixed;
+    }
+
+    .router-container {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .fixed {
+        position: fixed;
+        top: 60px;
+
+        &.left {
+          left: 0;
+        }
+
+        &.right {
+          right: 0;
+        }
+      }
+    }
   }
 </style>

@@ -2,9 +2,9 @@
   <div class="videotalk-container">
     <div class="row">
       <div class="col">
-        <img src="../../assets/images/video-solid.svg" alt="">
+        <img src="../../../assets/images/video-solid.svg" alt="">
         <span><b>영상톡 모임</b> · 친구와의 영상 통화</span>
-        <img src="../../assets/images/info-circle-solid.svg" alt="">
+        <img src="../../../assets/images/info-circle-solid.svg" alt="">
       </div>
       <div class="col">
         <span>영상톡 모임 만들기</span>

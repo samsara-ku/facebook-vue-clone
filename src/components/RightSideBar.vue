@@ -10,6 +10,11 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+  .sidebar-container {
+    padding-top: 16px;
+    height: 100%;
+    overflow: auto;
+    background-color: red;
+  }
 </style>

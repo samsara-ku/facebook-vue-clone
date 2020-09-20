@@ -2,7 +2,7 @@
   <div class="thought-container">
     <div class="row">
       <div class="col">
-        <img src="../../assets/images/profile.jpeg" alt="">
+        <img src="../../../assets/images/profile.jpeg" alt="">
       </div>
       <div class="col">
         {{name}}님, 무슨 생각을 하고 계신가요?
@@ -90,20 +90,20 @@ export default {
         &:nth-of-type(1) {
           &:before {
             fill: blue;
-            background: url('../../assets/images/video-solid.svg') center/100% no-repeat;
+            background: url('../../../assets/images/video-solid.svg') center/100% no-repeat;
           }
         }
 
         &:nth-of-type(2) {
           &:before {
             color: blue;
-            background: url('../../assets/images/images-solid.svg') center/100% no-repeat;
+            background: url('../../../assets/images/images-solid.svg') center/100% no-repeat;
           }
         }
 
         &:nth-of-type(3) {
           &:before {
-            background: url('../../assets/images/smile-regular.svg') center/100% no-repeat;
+            background: url('../../../assets/images/smile-regular.svg') center/100% no-repeat;
           }
         }
 
