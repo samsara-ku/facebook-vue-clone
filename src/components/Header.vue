@@ -17,6 +17,7 @@
         :key="index"
         :style="{'background': 'url(' + `${elem.path}` + ') center/25% no-repeat'}"
         @click="navigator"
+        ref="list"
       >
       </div>
     </div>
@@ -42,7 +43,7 @@ export default {
 
   data() {
     return {
-      currentPage: null,
+      prevPage: null,
       middleSrc: [
         {
           path: require(`../assets/images/home-solid.svg`),
@@ -82,17 +83,31 @@ export default {
     }
   },
 
+  props: {
+    url: {
+      type: String,
+      default: ''
+    }
+  },
+
+  watch: {
+    url() {
+      this.$refs.list.find(e => e.classList.contains('target')).classList.remove('target')
+      this.$refs.list.find(e => e.id == this.url).classList.add('target')
+      this.prevPage = this.url
+    }
+  },
+
   methods: {
     navigator(e) {
-      this.currentPage != null ? this.currentPage.classList.remove('target') : ''
-
-      if(!e.target.classList.contains('target')) {
-        e.target.classList.add('target')
-        this.currentPage = e.target
-      }
-      return this.$router.push(e.target.id).catch(() => {})
+      this.$router.push(e.target.id).catch(() => {})
     }
-  }
+  },
+
+  mounted() {
+    this.$refs.list.find(e => e.id == this.url).classList.add('target')
+    this.prevPage = 'home'
+  },
 }
 </script>
 

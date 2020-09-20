@@ -1,6 +1,8 @@
 <template>
   <div class="mainlayout-container">
-    <Header />
+    <Header
+    :url="this.$route.path.substring(1)"
+    />
     <div class="router-container">
       <MainLeftSideBar />
       <router-view />
